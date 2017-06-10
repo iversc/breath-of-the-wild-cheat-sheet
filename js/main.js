@@ -1,4 +1,4 @@
-var profilesKey = 'darksouls3_profiles';
+var profilesKey = 'zeldabotw_profiles';
 
 (function($) {
     'use strict';
@@ -218,7 +218,7 @@ var profilesKey = 'darksouls3_profiles';
         if (!('collapsed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].collapsed = {};
         if (!('current_tab' in profiles[profilesKey][profile_name]))
-            profiles[profilesKey][profile_name].current_tab = '#tabPlaythrough';
+            profiles[profilesKey][profile_name].current_tab = '#tabQuests';
         if (!('hide_completed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hide_completed = false;
         if (!('hidden_categories' in profiles[profilesKey][profile_name]))
@@ -326,7 +326,7 @@ var profilesKey = 'darksouls3_profiles';
             var overallCount = 0, overallChecked = 0;
             $('[id^="' + type + '_totals_"]').each(function(index) {
                 var regex = new RegExp(type + '_totals_(.*)');
-                var regexFilter = new RegExp('^playthrough_(.*)');
+                var regexFilter = new RegExp('^quests_(.*)');
                 var i = parseInt(this.id.match(regex)[1]);
                 var count = 0, checked = 0;
                 for (var j = 1; ; j++) {
@@ -440,11 +440,8 @@ var profilesKey = 'darksouls3_profiles';
      */
     $(function() {
         var jets = [new Jets({
-            searchTag: '#playthrough_search',
-            contentTag: '#playthrough_list ul'
-        }), new Jets({
-            searchTag: '#item_search',
-            contentTag: '#item_list ul'
+            searchTag: '#quests_search',
+            contentTag: '#quests_list ul'
         }), new Jets({
             searchTag: '#weapons_search',
             contentTag: '#weapons_list ul'
@@ -453,13 +450,9 @@ var profilesKey = 'darksouls3_profiles';
             contentTag: '#armors_list ul'
         })];
 
-        $('#playthrough_search').keyup(function() {
-            $('#playthrough_list').unhighlight();
-            $('#playthrough_list').highlight($(this).val());
-        });
-        $('#item_search').keyup(function() {
-            $('#item_list').unhighlight();
-            $('#item_list').highlight($(this).val());
+        $('#quests_search').keyup(function() {
+            $('#quests_list').unhighlight();
+            $('#quests_list').highlight($(this).val());
         });
         $('#weapons_search').keyup(function() {
             $('#weapons_list').unhighlight();
