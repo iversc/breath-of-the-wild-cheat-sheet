@@ -1,6 +1,11 @@
+## Included software licenses
+
+This Software includes modified code from the Dark Souls 3 Cheat Sheet, and is
+published and modified under the following terms:
+
 MIT License
 
-Copyright (c) 2017 Chris Iverson
+Copyright (c) 2017 Zachary Kjellberg
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
