@@ -87,10 +87,10 @@ jQuery.fn.highlight = function (words, options) {
         words = [words];
     }
     words = jQuery.grep(words, function(word, i){
-      return word != '';
+        return word != '';
     });
     words = jQuery.map(words, function(word, i) {
-      return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+        return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
     });
     if (words.length == 0) { return this; };
 
